@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocoa Bliss | Premium Chocolates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">🍫 Cocoa<span>Bliss</span></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Chocolates</a>
+    <a href="#about">Our Story</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#cart" class="cart-link">🛒 Cart <span id="cart-count">0</span></a>
+</header>
+
+<main>
+  <!-- HERO CAROUSEL -->
+  <section class="hero" id="home">
+    <div class="hero-slide active"
+      style="background-image:linear-gradient(90deg,rgba(35,14,8,.9),rgba(35,14,8,.15)),url('https://images.unsplash.com/photo-1548907040-4d42f0c7d7c4?auto=format&fit=crop&w=1800&q=85')">
+      <div class="hero-content">
+        <p class="eyebrow">MADE WITH LOVE & COCOA</p>
+        <h1>Happiness Comes<br>in <span>Chocolate</span></h1>
+        <p>Discover rich, creamy and unforgettable chocolate creations.</p>
+        <a href="#products" class="btn">Explore Chocolates →</a>
+      </div>
+    </div>
+
+    <div class="hero-slide"
+      style="background-image:linear-gradient(90deg,rgba(35,14,8,.9),rgba(35,14,8,.15)),url('https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1800&q=85')">
+      <div class="hero-content">
+        <p class="eyebrow">A LITTLE MOMENT OF MAGIC</p>
+        <h1>Share Love.<br><span>Share Chocolate.</span></h1>
+        <p>Make birthdays, celebrations and everyday moments sweeter.</p>
+        <a href="#products" class="btn">Shop Now →</a>
+      </div>
+    </div>
+
+    <div class="hero-slide"
+      style="background-image:linear-gradient(90deg,rgba(35,14,8,.9),rgba(35,14,8,.15)),url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1800&q=85')">
+      <div class="hero-content">
+        <p class="eyebrow">PREMIUM CHOCOLATE COLLECTION</p>
+        <h1>Pure Cocoa.<br><span>Pure Joy.</span></h1>
+        <p>Find your favourite indulgence in every delicious bite.</p>
+        <a href="#products" class="btn">Discover More →</a>
+      </div>
+    </div>
+
+    <button class="carousel-arrow prev" id="prev-slide" aria-label="Previous slide">❮</button>
+    <button class="carousel-arrow next" id="next-slide" aria-label="Next slide">❯</button>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="features">
+    <div>🍫 <strong>Premium Taste</strong><small>Made for chocolate lovers</small></div>
+    <div>🎁 <strong>Perfect Gifting</strong><small>Sweeten every occasion</small></div>
+    <div>🚚 <strong>Easy Ordering</strong><small>Simple shopping experience</small></div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <div class="section-heading">
+      <p class="eyebrow">A WORLD OF FLAVOUR</p>
+      <h2>Our Chocolate Collection</h2>
+      <p>Find your new favourite sweet treat.</p>
+    </div>
+
+    <div class="filters">
+      <input type="search" id="search" placeholder="Search chocolates...">
+      <select id="category">
+        <option value="All">All Chocolates</option>
+        <option value="Dark">Dark Chocolate</option>
+        <option value="Milk">Milk Chocolate</option>
+        <option value="White">White Chocolate</option>
+        <option value="Gift">Gift Boxes</option>
+      </select>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-image"></div>
+    <div>
+      <p class="eyebrow">OUR SWEET STORY</p>
+      <h2>Every Bite Tells a Story</h2>
+      <p>At Cocoa Bliss, we believe chocolate is more than a treat.
+        It is a little celebration, a thoughtful gift and a reason to smile.
+        Explore our collection and find a flavour made for your moment.</p>
+      <a href="#products" class="btn">Find Your Favourite</a>
+    </div>
+  </section>
+
+  <!-- CART AND BILLING -->
+  <section class="section billing-section" id="cart">
+    <div class="section-heading">
+      <p class="eyebrow">YOUR SWEET SELECTION</p>
+      <h2>Shopping Cart & Billing</h2>
+    </div>
+
+    <div class="billing-layout">
+      <div class="cart-panel">
+        <h3>Your Cart</h3>
+        <div id="cart-items">
+          <p class="empty-cart">Your cart is empty. Add some chocolate!</p>
+        </div>
+      </div>
+
+      <div class="checkout-panel">
+        <h3>Customer Details</h3>
+        <form id="checkout-form">
+          <label for="customer-name">Full Name</label>
+          <input id="customer-name" required placeholder="Enter your full name">
+
+          <label for="customer-phone">Phone Number</label>
+          <input id="customer-phone" required type="tel"
+            pattern="[0-9]{10}" maxlength="10"
+            placeholder="10-digit mobile number">
+
+          <label for="customer-email">Email Address</label>
+          <input id="customer-email" type="email" placeholder="you@example.com">
+
+          <label for="customer-address">Delivery Address</label>
+          <textarea id="customer-address" required rows="3"
+            placeholder="House, street, city and PIN code"></textarea>
+
+          <label for="payment-method">Payment Method</label>
+          <select id="payment-method" required>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+            <option value="UPI">UPI (demo)</option>
+            <option value="Card">Card (demo)</option>
+          </select>
+
+          <div class="bill-summary">
+            <div><span>Subtotal</span><strong id="subtotal">₹0.00</strong></div>
+            <div><span>Discount (5%)</span><strong id="discount">₹0.00</strong></div>
+            <div><span>Delivery</span><strong id="delivery">₹0.00</strong></div>
+            <div class="grand-total"><span>Total</span><strong id="total">₹0.00</strong></div>
+          </div>
+
+          <p class="small-note">5% discount on orders of ₹1,000 or more.
+            Delivery is free on orders of ₹1,000 or more; otherwise ₹50.
+          </p>
+
+          <button class="btn checkout-btn" type="submit">Place Order</button>
+          <p class="small-note">Demo checkout only. No real payment is collected.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- GENERATED INVOICE -->
+    <div id="invoice" class="invoice hidden">
+      <div class="invoice-header">
+        <div>
+          <h2>🍫 Cocoa Bliss</h2>
+          <p>Premium Chocolate Collection</p>
+        </div>
+        <div class="invoice-label">
+          <h2>INVOICE</h2>
+          <p id="invoice-number"></p>
+          <p id="invoice-date"></p>
+        </div>
+      </div>
+      <hr>
+      <div id="invoice-customer"></div>
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-lines"></tbody>
+      </table>
+      <div id="invoice-totals" class="invoice-totals"></div>
+      <p class="thank-you">Thank you for choosing Cocoa Bliss!</p>
+      <div class="invoice-actions no-print">
+        <button class="btn" id="print-invoice" type="button">Print Invoice / Save PDF</button>
+        <button class="btn secondary-btn" id="new-order" type="button">New Order</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <a href="#home" class="logo footer-logo">🍫 Cocoa<span>Bliss</span></a>
+      <p>Life is sweeter with chocolate.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#products">Our Chocolates</a>
+      <a href="#about">Our Story</a>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p>Email: hello@cocoabliss.example</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>India</p>
+    </div>
+  </div>
+  <div class="copyright">
+    © <span id="year"></span> Cocoa Bliss. All rights reserved.
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
